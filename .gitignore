@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+.classpath
+.project
+.settings
+eclipse
+tmp
+lib
+test-result/
+application.conf

@@ -1,0 +1,6 @@
+self: play -> twitter 0.1
+
+require:
+    - play 1.2
+    - org.twitter4j -> twitter4j-core 2.2.1:
+        transitive: false
