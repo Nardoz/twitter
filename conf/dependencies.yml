@@ -4,3 +4,4 @@ require:
     - play 1.2
     - org.twitter4j -> twitter4j-core 2.2.1:
         transitive: false
+    - org.twitter4j -> twitter4j-stream 2.2.1

@@ -5,6 +5,7 @@ import play.Play;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.Router;
+import twitter.TwitterAuthenticationHandler;
 import twitter.TwitterService;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
