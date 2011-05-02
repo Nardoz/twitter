@@ -1,0 +1,23 @@
+package twitter;
+
+public enum TwitterEvent {
+	// Statuses
+	STATUS,
+	STATUS_PUBLIC,
+	STATUS_PERSONAL,
+	STATUS_WITH_MENTIONS,
+	STATUS_WITH_HASHTAGS,
+	STATUS_WITH_RETWEET,
+
+	// Actions
+	TWEET,
+	MENTION,
+	REPLY,
+	RETWEET,
+	
+	FAVORITE,
+	UNFAVORITE,
+	
+	FOLLOW,
+	UNFOLLOW
+}
