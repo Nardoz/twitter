@@ -1,4 +1,4 @@
-self: play -> twitter 0.1
+self: smx -> twitter 0.1
 
 require:
     - play 1.2
