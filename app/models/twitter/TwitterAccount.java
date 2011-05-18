@@ -21,6 +21,7 @@ public class TwitterAccount extends Model {
 	public Long twitterId;
 	public String token;
 	public String tokenSecret;
+	public String screenName;
 	
 	@Transient
 	private User user;
@@ -31,7 +32,17 @@ public class TwitterAccount extends Model {
 	
 	public User user() throws TwitterException {
 		if(user == null) {
-			user = TwitterService.factory(getAccessToken()).verifyCredentials();
+			if(token != null && tokenSecret != null) {
+				user = TwitterService.factory(getAccessToken()).verifyCredentials();
+			}
+			else {
+				if(twitterId != 0) {
+					user = TwitterService.factory().showUser(twitterId);
+				}
+				else if(screenName != null & screenName.isEmpty()) {
+					user = TwitterService.factory().showUser(screenName);
+				}
+			}
 		}
 		return user;
 	}
