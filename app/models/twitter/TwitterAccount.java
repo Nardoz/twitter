@@ -22,6 +22,7 @@ public class TwitterAccount extends Model {
 	public String token;
 	public String tokenSecret;
 	public String screenName;
+	public Boolean enabled;
 	
 	@Transient
 	private User user;
@@ -45,6 +46,10 @@ public class TwitterAccount extends Model {
 			}
 		}
 		return user;
+	}
+	
+	public Boolean hasUserStreamCapabilities() {
+		return token != null && tokenSecret != null;
 	}
 	
 	public TwitterStream getStream() {
