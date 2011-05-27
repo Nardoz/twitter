@@ -57,8 +57,4 @@ public class TwitterAccount extends Model {
 	public TwitterStream getStream() {
 		return TwitterService.streamFactory(getAccessToken());
 	}
-
-	public Boolean hasUserStreamCapabilities() {
-		return token != null && tokenSecret != null;
-	}
 }
