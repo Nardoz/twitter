@@ -28,7 +28,9 @@ public class TwitterAccount extends Model {
 	private User user;
 	
 	public AccessToken getAccessToken() {
-		return new AccessToken(token, tokenSecret);
+		return (token != null && tokenSecret != null)
+			? new AccessToken(token, tokenSecret)
+			: null;
 	}
 	
 	public User user() throws TwitterException {
@@ -54,5 +56,9 @@ public class TwitterAccount extends Model {
 	
 	public TwitterStream getStream() {
 		return TwitterService.streamFactory(getAccessToken());
+	}
+
+	public Boolean hasUserStreamCapabilities() {
+		return token != null && tokenSecret != null;
 	}
 }
