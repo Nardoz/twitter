@@ -50,11 +50,11 @@ public class TwitterAccount extends Model {
 		return user;
 	}
 	
-	public TwitterStream getStream() {
-		return TwitterService.streamFactory(getAccessToken());
-	}
-
 	public Boolean hasAuthenticationTokens() {
 		return token != null && tokenSecret != null;
+	}
+	
+	public TwitterStream getStream() {
+		return TwitterService.streamFactory(getAccessToken());
 	}
 }
